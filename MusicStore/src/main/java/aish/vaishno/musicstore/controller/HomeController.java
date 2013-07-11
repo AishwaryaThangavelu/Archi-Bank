@@ -2,6 +2,7 @@ package aish.vaishno.musicstore.controller;
 
 import aish.vaishno.musicstore.dao.IMusicStoreDao;
 import aish.vaishno.musicstore.pojo.MusicDetails;
+import aish.vaishno.musicstore.service.IMusicStoreService;
 import java.io.IOException;
 import java.util.List;
 
@@ -19,7 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 
         @Autowired
-        private IMusicStoreDao musicStoreDao;
+        private IMusicStoreService musicStoreService;
     
 	@RequestMapping(value="/")
 	public ModelAndView test(HttpServletResponse response) throws IOException{
@@ -30,17 +31,13 @@ public class HomeController {
         @RequestMapping(value="AddSong",method = RequestMethod.POST)
         @ResponseBody
         public String addSong(@ModelAttribute("musicDetForm") MusicDetails musicDetails){
-           return musicStoreDao.addSong(musicDetails);
+           return musicStoreService.addSong(musicDetails);
         }
         
         @RequestMapping("SongList/")
         @ResponseBody
         public List<MusicDetails> getSongList(){
-            return musicStoreDao.getSongList();
+            return musicStoreService.getSongList();
         }
         
-//        @RequestMapping(value = "particularSong/")
-//        public MusicDetails getParticularSongDetails(Integer musicID){
-//            
-//        }
 }
