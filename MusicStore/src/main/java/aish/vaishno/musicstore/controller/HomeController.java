@@ -34,10 +34,9 @@ public class HomeController {
            return musicStoreService.addSong(musicDetails);
         }
         
-        @RequestMapping("SongList/")
+        @RequestMapping(value = "SongList/",method = RequestMethod.GET)
         @ResponseBody
         public List<MusicDetails> getSongList(){
             return musicStoreService.getSongList();
         }
-        
 }
