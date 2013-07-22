@@ -1,5 +1,6 @@
 package aish.vaishno.springjpatrial2.config;
 
+
 import aish.vaishno.springjpatrial2.dao.IMusicStoreDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -11,13 +12,13 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-@Configuration
-@ComponentScan(basePackages="aish.vaishno.springjpatrial2")
-@EnableWebMvc
+//@Configuration
+//@ComponentScan(basePackages="aish.vaishno.springjpatrial2")
+//@EnableWebMvc
 public class MvcConfiguration extends WebMvcConfigurerAdapter{
 
   
-	@Bean
+	//@Bean
 	public ViewResolver getViewResolver(){
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		resolver.setPrefix("/WEB-INF/views/");
@@ -32,3 +33,4 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter{
 
 	
 }
+

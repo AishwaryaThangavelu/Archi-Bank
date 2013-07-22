@@ -7,8 +7,8 @@ package aish.vaishno.springjpatrial2.dao;
 import aish.vaishno.springjpatrial2.pojo.MusicDetails;
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import org.springframework.transaction.annotation.Transactional;
@@ -18,12 +18,13 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Aishu
  */
 
-@Service
+@Service(value = "Aishwarya's Music Store Dao")
+@Repository(value = "Aishwarya's Music Store Dao")
 @Transactional
 public class MusicStoreDaoImpl implements IMusicStoreDao{
     
   //  @PersistenceContext
-/*  @PersistenceContext(unitName = "simple-jpa")
+  @PersistenceContext(unitName = "simple-jpa")
     private EntityManager entityManager;
     
     
@@ -32,10 +33,10 @@ public class MusicStoreDaoImpl implements IMusicStoreDao{
     this.entityManager = entityManager;
     }
     
-*/
+
             
-       private  EntityManagerFactory entityManagerFactory= Persistence.createEntityManagerFactory("simple-jpa");
-       private  EntityManager entityManager = entityManagerFactory.createEntityManager();
+//       private  EntityManagerFactory entityManagerFactory= Persistence.createEntityManagerFactory("simple-jpa");
+//       private  EntityManager entityManager = entityManagerFactory.createEntityManager();
     
         @Override
         public List<MusicDetails> getMusicList(){

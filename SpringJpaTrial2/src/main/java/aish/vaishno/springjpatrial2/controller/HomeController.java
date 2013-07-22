@@ -13,20 +13,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
+//@Controller
 public class HomeController {
 
-      @Autowired
-    private IMusicStoreDao musicStoreDao;
+   //   @Autowired
+   //  private IMusicStoreDao musicStoreDao;
       
-	@RequestMapping(value="/")
+	//@RequestMapping(value="/")
 	public ModelAndView test(HttpServletResponse response) throws IOException{
-		return new ModelAndView("home","musicStoreList",musicStoreDao.getMusicList());
+		return new ModelAndView("home");
 	}
         
-        @RequestMapping("JPASongList/")
-        @ResponseBody
-        public List<MusicDetails> getSongList(){
-            return musicStoreDao.getMusicList();
-        }
+//        @RequestMapping("JPASongList/")
+//        @ResponseBody
+//        public List<MusicDetails> getSongList(){
+//            return musicStoreDao.getMusicList();
+//        }
 }

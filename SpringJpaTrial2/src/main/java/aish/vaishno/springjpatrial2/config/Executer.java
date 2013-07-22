@@ -4,12 +4,11 @@
  */
 package aish.vaishno.springjpatrial2.config;
 
+import aish.vaishno.springjpatrial2.dao.IMusicStoreDao;
 import aish.vaishno.springjpatrial2.dao.MusicStoreDaoImpl;
-import aish.vaishno.springjpatrial2.pojo.MusicDetails;
-import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 
 /**
  *
@@ -25,8 +24,12 @@ public class Executer {
         System.out.println(musicDetailsList);
          */
         
-        MusicStoreDaoImpl musicStoreDao= new MusicStoreDaoImpl();
-        System.out.println("********"+musicStoreDao.getMusicList());
+       // IMusicStoreDao musicStoreDao= new MusicStoreDaoImpl();
+      //  System.out.println("********"+musicStoreDao.getMusicList());
+        
+        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("META-INF/app-context.xml");
+        IMusicStoreDao musicStoreDao=(IMusicStoreDao) applicationContext.getBean("Aishwarya's Music Store Dao");
+        System.out.println("****"+musicStoreDao.getMusicList());
                 
         
     }
