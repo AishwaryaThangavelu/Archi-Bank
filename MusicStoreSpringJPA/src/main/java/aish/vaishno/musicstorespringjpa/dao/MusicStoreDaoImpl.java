@@ -26,12 +26,6 @@ public class MusicStoreDaoImpl implements IMusicStoreDao{
   @PersistenceContext(unitName = "simple-jpa")
     private EntityManager entityManager;
     
-    
-    
-    public void setEntityManager(EntityManager entityManager){
-    this.entityManager = entityManager;
-    }
-    
 
    @Override
      public List<MusicDetails> getMusicList(){
