@@ -39,9 +39,4 @@ public class MusicStoreDaoImpl implements IMusicStoreDao{
      return musicDetailsList;
     }
 
-    @Override
-    public void addSongs() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

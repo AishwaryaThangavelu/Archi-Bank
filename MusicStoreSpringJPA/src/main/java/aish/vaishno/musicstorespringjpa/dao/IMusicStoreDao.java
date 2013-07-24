@@ -13,7 +13,6 @@ import java.util.List;
  */
 public interface IMusicStoreDao {
     
-    public void addSongs();
-    public List<MusicDetails> getMusicList();
+   public List<MusicDetails> getMusicList();
     
 }
