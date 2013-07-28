@@ -12,7 +12,7 @@ class HttpCall {
 		def url=("http://www.aishwaryvaishno.wordpress.com").toURL().getText();
 		println url;
 		
-		//def postReq=Http().post("http://www.google.com",[[fr:'sfp'],[p:'groovy']]).text;
-		//println postReq;
+		/*def postReq=Http().post("http://www.google.com",[[fr:'sfp'],[p:'groovy']]).text;
+		println postReq;*/
 	}
 }
